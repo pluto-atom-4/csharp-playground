@@ -1,25 +1,17 @@
-using Microsoft.EntityFrameworkCore;
 using CSharpPlayground.Models;
-using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace CSharpPlayground.Data;
 
-public class SchoolContext : DbContext
+public class SchoolContext(string connectionString) : DbContext
 {
-    private readonly string _connectionString;
-
-    public SchoolContext(string connectionString)
-    {
-        _connectionString = connectionString;
-    }
-
     public DbSet<Student> Students { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseSqlite(_connectionString);
+            optionsBuilder.UseSqlite(connectionString);
         }
     }
 }

@@ -1,7 +1,7 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using CSharpPlayground;
 using CSharpPlayground.Data;
 using CSharpPlayground.Models;
+using Microsoft.Extensions.Configuration;
 
 // Build configuration from appsettings.json
 var config = new ConfigurationBuilder()

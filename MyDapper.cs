@@ -1,6 +1,8 @@
+using CSharpPlayground.Models;
 using Dapper;
 using Microsoft.Data.Sqlite;
-using CSharpPlayground.Models;
+
+namespace CSharpPlayground;
 
 public static class DapperDemo
 {

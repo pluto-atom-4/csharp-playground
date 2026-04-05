@@ -5,7 +5,7 @@ namespace CSharpPlayground.Data;
 
 public class SchoolContext(string connectionString) : DbContext
 {
-    public DbSet<Student> Students { get; set; }
+    public DbSet<Student> Students { get; set; } = null!;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

@@ -37,42 +37,9 @@ csharp-playground/
 
 ### Directory Breakdown
 
-- **src/Models/** - Domain models (Student entity)
-- **src/Services/** - Business logic abstraction layer (StudentService)
-- **src/CSharpPlayground/** - Main application logic and demonstrations
 - **tests/Unit/** - Unit tests (StudentServiceTests with 19 tests)
 - **Data/** - Entity Framework context and database models
 - **db/** - SQLite database file
-
-## Architecture
-
-### Service Layer Pattern
-This project implements a service layer pattern for clean separation of concerns:
-
-- **Models** - Domain entities (Student)
-- **Services** - Business logic abstraction (StudentService)
-- **Tests** - Comprehensive unit tests for services
-
-The StudentService provides an abstraction over data operations, making it easy to:
-- Test business logic independently
-- Swap implementations (in-memory → database)
-- Maintain and extend functionality
-- Support dependency injection
-
-### Key Features
-
-- **StudentService** (5 methods):
-  - AddStudent() - Create new student
-  - GetAllStudents() - Retrieve all students
-  - GetStudentById() - Find by ID
-  - GetStudentsByName() - Search by name (partial match, case-insensitive)
-  - GetStudentCount() - Get total count
-
-- **Comprehensive Testing** (19 tests):
-  - Unit tests for each method
-  - Edge case coverage
-  - Null/empty input validation
-  - Error condition handling
 
 ## Running the Project
 
@@ -83,15 +50,10 @@ dotnet build
 # Run all tests
 dotnet test
 
-# Run specific test class
-dotnet test --filter "StudentServiceTests"
-
 # Run the main application
 dotnet run
 ```
 
-
-Expected output: All 19 tests pass ✅
 
 ## Database
 

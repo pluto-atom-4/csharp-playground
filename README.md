@@ -17,26 +17,22 @@ The CSharpPlayground project is designed to explore and evaluate:
 
 ```
 csharp-playground/
-├── src/
-│   ├── Models/
-│   │   └── Student.cs                    # Student entity model
-│   ├── Services/
-│   │   └── StudentService.cs             # Service layer for data operations
-│   └── CSharpPlayground/
-│       ├── MyEF.cs                       # Entity Framework demonstration
-│       ├── MyDapper.cs                   # Dapper ORM demonstration
-│       └── Program.cs                    # Main entry point
+├── Data/                         # Entity Framework context
+│   └── SchoolContext.cs          # EF Core DbContext for Student entity
+├── db/                           # Local database files
+│   └── csharp-playground.db      # SQLite database file
+├── Models/
+│   └── Student.cs                # Student entity model
 ├── tests/
-│   ├── Unit/
-│   │   └── StudentServiceTests.cs        # 19 unit tests for StudentService
-│   └── CSharpPlayground.Tests/
-│       └── [existing tests]
-├── Data/                                  # Entity Framework context & models
-├── appsettings.json                      # Configuration
-├── csharp-playground.csproj              # Main project file
-├── csharp-playground.sln                 # Solution file
-├── REORGANIZATION_SUMMARY.md             # Detailed reorganization guide
-└── IMPLEMENTATION_COMPLETE.md            # Implementation status report
+│   └── Unit/
+├── .gitignore                    # Git Ignore file
+├── appsettings.json              # Configuration
+├── csharp-playground.csproj      # Main project file
+├── csharp-playground.sln         # Solution file
+├── MyDapper.cs                   # Dapper ORM demonstration
+├── MyEF.cs                       # Entity Framework demonstration
+├── Program.cs                    # Main entry point
+└── README.md                     # This file
 ```
 
 ### Directory Breakdown
@@ -94,21 +90,6 @@ dotnet test --filter "StudentServiceTests"
 dotnet run
 ```
 
-## Testing
-
-The project includes comprehensive unit tests:
-- **StudentServiceTests.cs** - 19 xUnit tests covering:
-  - AddStudent (4 tests)
-  - GetAllStudents (3 tests)
-  - GetStudentById (3 tests)
-  - GetStudentsByName (6 tests)
-  - GetStudentCount (2 tests)
-  - Integration scenarios
-
-Run tests with:
-```bash
-dotnet test
-```
 
 Expected output: All 19 tests pass ✅
 

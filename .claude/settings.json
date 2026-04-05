@@ -1,0 +1,59 @@
+{
+  "description": "Claude Code security and development settings for CSharpPlayground",
+  "rules": {
+    "allow_read_all_files": true,
+    "allow_edit_all_files": true,
+    "dangerous_operations_require_confirmation": [
+      "git reset --hard",
+      "git push --force",
+      "git push --force-with-lease",
+      "git branch -D",
+      "rm -rf"
+    ]
+  },
+  "security": {
+    "block_sensitive_patterns": true,
+    "patterns": [
+      {
+        "name": "API Keys",
+        "pattern": "api[_-]?key|API[_-]?KEY",
+        "action": "warn"
+      },
+      {
+        "name": "Database Passwords",
+        "pattern": "password|passwd|pwd",
+        "action": "warn"
+      },
+      {
+        "name": "Private Keys",
+        "pattern": "-----BEGIN PRIVATE KEY|-----BEGIN RSA PRIVATE KEY",
+        "action": "block"
+      },
+      {
+        "name": "AWS Credentials",
+        "pattern": "AKIA[0-9A-Z]{16}",
+        "action": "warn"
+      }
+    ],
+    "exclude_from_commit": [
+      "*.pdb",
+      "*.db",
+      "*.db-shm",
+      "*.db-wal",
+      ".env",
+      "appsettings.*.json",
+      "secrets.json"
+    ]
+  },
+  "development": {
+    "default_shell": "zsh",
+    "auto_format_on_save": false,
+    "run_tests_on_save": false
+  },
+  "git": {
+    "require_commit_confirmation": false,
+    "require_branch_exists": true,
+    "auto_push": false,
+    "auto_fetch": false
+  }
+}

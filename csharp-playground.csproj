@@ -28,4 +28,9 @@
     <None Include="tests/**/*.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="tests\Unit\" />
+  </ItemGroup>
+
 </Project>

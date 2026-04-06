@@ -9,7 +9,6 @@ public static class DapperDemo
     public static void Run(string connectionString)
     {
         Console.WriteLine("\n--- Dapper Demo ---");
-        
         using var connection = new SqliteConnection(connectionString);
         
         // 1. Insert data using raw SQL

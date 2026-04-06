@@ -1,0 +1,63 @@
+# DEPRECATED: See inspection-about-me.md
+
+This file has been **consolidated into inspection-about-me.md** to reduce document duplication.
+
+## What Moved
+
+**Consolidated Content**:
+- ✅ Pre-Inspection Checklist → inspection-about-me.md
+- ✅ Sample Task Details → inspection-about-me.md  
+- ✅ Expected Token Costs → inspection-about-me.md
+- ✅ Execution Workflow → inspection-about-me.md
+
+**Related Documents**:
+- 📊 `inspection-about-me.md` - Project analysis + consolidated task details
+- 🚀 `about-me-inspection-guide.md` - Quick-start execution guide
+- 📋 `INSPECTION-INDEX.md` - Document navigation
+
+## Sample Task Prompt
+
+For reference, the task prompt (also documented in about-me-inspection-guide.md):
+
+```
+Task: Implement Repository Pattern Phase 2 (Steps 1-2)
+
+Objective: Create IStudentRepository abstraction and extract EF Core implementation.
+
+Instructions:
+
+1. Create directory: src/CSharpPlayground/Features/DataAccess/
+
+2. Create IStudentRepository.cs with interface definition:
+   - 5 async methods for CRUD operations
+   - Methods: GetAllAsync, GetByIdAsync, AddAsync, UpdateAsync, DeleteAsync
+   - All should work with Student entity
+
+3. Create StudentEFRepository.cs:
+   - Implement IStudentRepository interface
+   - Extract database logic from existing MyEF.cs
+   - Use constructor injection for SchoolContext
+   - Remove mixed concerns (configuration, directory creation, etc.)
+   - Keep only data access logic
+
+4. Validation:
+   - Ensure project compiles: dotnet build
+   - Check for any compiler errors
+   - Confirm files are in correct location
+
+Constraints:
+- Do NOT modify existing MyEF.cs or MyDapper.cs yet
+- Do NOT create or run tests
+- Do NOT update Program.cs
+- Do NOT modify appsettings.json
+- Keep it simple: focus only on repository abstraction extraction
+
+Success = Code compiles without errors + files exist in correct location
+```
+
+---
+
+**Migration Date**: April 5, 2026  
+**Status**: CONSOLIDATED  
+**Archive**: Kept for reference only
+
